@@ -20,11 +20,11 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 6.0"
 
-  name = "${var.cluster_name}-vpc"
+  name = "${var.project_name}-vpc"
   cidr = var.vpc_cidr
 
   azs             = slice(data.aws_availability_zones.available.names, 0, 2) # Obtiene 2 zonas de disponibilidad (AZs)
-  private_subnets = var.private_subnet_cidrs
+  private_subnets = var.private_subnets_cidrs
 
   # ----------------------------------------------------
   # Acceso público (si var.enable_public_access=true)
