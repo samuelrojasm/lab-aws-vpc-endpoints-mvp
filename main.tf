@@ -14,7 +14,7 @@ resource "aws_vpc_endpoint" "eks" {
   service_name        = "eks"
   vpc_endpoint_type   = "Interface"
   subnet_ids          = module.vpc.private_subnets
-  security_group_ids  = [module.vpc_endpoints_sg.security_group_id]
+  security_group_ids  = [aws_security_group.vpc_endpoints_sg.id]
   private_dns_enabled = true
   tags = {
     Name = "EKS-AUTH-Endpoint"
@@ -36,7 +36,7 @@ module "vpc_endpoints" {
 
   # ID de los grupos de seguridad que se asociarán a los endpoints
   # Es recomendable tener un grupo de seguridad específico para los endpoints
-  security_group_ids = [module.vpc_endpoints_sg.security_group_id]
+  security_group_ids = [aws_security_group.vpc_endpoints_sg.id]
 
   # Lista de IDs de las subredes privadas donde se crearán los endpoints
   # Esto es crucial para los endpoints de tipo "Interface"
@@ -54,7 +54,7 @@ module "vpc_endpoints" {
   endpoints = {
 
     eks_auth = {
-      service             = "com.amazonaws.${var.aws_region}.eks-auth"
+      service             = "eks-auth"
       vpc_endpoint_type   = "Interface"
       private_dns_enabled = true
       tags = {

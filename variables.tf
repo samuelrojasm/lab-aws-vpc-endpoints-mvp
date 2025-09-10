@@ -12,7 +12,7 @@ variable "vpc_cidr" {
   default     = "10.0.0.0/16"
 }
 
-variable "private_subnet_cidrs" {
+variable "private_subnets_cidrs" {
   type        = list(string)
   description = "Lista de CIDRs para las subredes privadas"
   default     = ["10.0.1.0/24", "10.0.2.0/24"]
@@ -30,7 +30,7 @@ variable "enable_public_access" {
   default     = false
 }
 
-variable "proyect_name" {
+variable "project_name" {
   type        = string
   description = "Nombre del proyecto"
   default     = "vpc-endpoints-mvp"
