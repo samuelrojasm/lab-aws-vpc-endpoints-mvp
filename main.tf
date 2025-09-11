@@ -31,9 +31,8 @@ module "vpc_endpoints" {
   # - Mejora la seguridad y reduce costos de transferencia de datos
 
   endpoints = {
-
-    # Crea un endpoint privado para la API del cluster de EKS dentro de las subredes privadas de la VPC
     eks = {
+      # Crea un endpoint privado para la API del cluster de EKS dentro de las subredes privadas de la VPC
       service             = "eks"
       vpc_endpoint_type   = "Interface"
       private_dns_enabled = true
@@ -42,8 +41,8 @@ module "vpc_endpoints" {
       }
     },
 
-    # Endpoint Privado para la autenticación del cluster EKS
     eks_auth = {
+      # Endpoint Privado para la autenticación del cluster EKS
       service             = "eks-auth"
       vpc_endpoint_type   = "Interface"
       private_dns_enabled = true
@@ -59,6 +58,26 @@ module "vpc_endpoints" {
       vpc_endpoint_type   = "Interface"
       private_dns_enabled = true
       tags                = { Name = "STS-Endpoint" }
+    }
+
+    # com.amazonaws.<region>.ssm → API de SSM
+    ssm = {
+      service             = "ssm"
+      vpc_endpoint_type   = "Interface"
+      private_dns_enabled = true
+      tags = {
+        Name = "SSM-Endpoint"
+      }
+    },
+
+    # com.amazonaws.<region>.ssmmessages → canal de comunicación para Session Manager
+    ssmmessages = {
+      service             = "ssmmessages"
+      vpc_endpoint_type   = "Interface"
+      private_dns_enabled = true
+      tags = {
+        Name = "SSM-Messages-Endpoint"
+      }
     }
   }
 }
