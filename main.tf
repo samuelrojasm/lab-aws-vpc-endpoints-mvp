@@ -17,7 +17,7 @@ resource "aws_vpc_endpoint" "eks" {
   security_group_ids  = [aws_security_group.vpc_endpoints_sg.id]
   private_dns_enabled = true
   tags = {
-    Name = "EKS-AUTH-Endpoint"
+    Name = "EKS-API-Endpoint"
   }
 }
 
