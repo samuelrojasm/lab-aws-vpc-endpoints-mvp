@@ -40,24 +40,26 @@
  <p align="center">
     <img src="assets/tf-apply.png" alt="tf-apply" width="80%">
 </p>
+
+### Terraform state list
+<p align="center">
+    <img src="assets/tf-state-list.png" alt="tf-state-list" width="80%">
+</p>
+
 ### Vista de Endpoints en la consola de AWS
 <p align="center">
     <img src="assets/aws-console.png" alt="aws-console" width="80%">
 </p>
 
+### VPC Resource Map
+<p align="center">
+    <img src="assets/vpc-resource-map.png" alt="vpc-resource-map" width="80%">
+</p>
+
 ### Terraform Destroy
-
-
-    ```json
-    {"message":"Hola Samuel desde Lambda con HTTP API!"}
-    ```
-
-    <p align="center">
-        <img src="imagenes/imagen.png" alt="imagen" width="80%">
-    </p>
-
-> [!NOTE]
-> Este es un bloque de nota.
+<p align="center">
+    <img src="assets/tf-destroy.png" alt="tf-destroy" width="80%">
+</p>
 
 ---
 
