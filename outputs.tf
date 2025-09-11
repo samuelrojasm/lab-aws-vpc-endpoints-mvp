@@ -24,9 +24,9 @@ output "sts_vpce_id" {
 output "vpce_ids" {
   description = "IDs de todos los VPC Endpoints"
   value = {
-    eks         = module.vpc_endpoints.endpoints.eks.id
-    eks_auth    = module.vpc_endpoints.endpoints.eks_auth.id
-    sts        = module.vpc_endpoints.endpoints.sts.id
+    eks      = module.vpc_endpoints.endpoints.eks.id
+    eks_auth = module.vpc_endpoints.endpoints.eks_auth.id
+    sts      = module.vpc_endpoints.endpoints.sts.id
   }
 }
 

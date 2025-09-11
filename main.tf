@@ -51,7 +51,7 @@ module "vpc_endpoints" {
         Name = "EKS-AUTH-Endpoint"
       }
     },
-    
+
     # Endpoint para EKS STS (para tokens IAM)
     # Habilitar un endpoint privado para STS permite que los nodos de tu VPC obtengan tokens IAM sin salir a Internet, muy útil para clusters EKS privados.
     sts = {
