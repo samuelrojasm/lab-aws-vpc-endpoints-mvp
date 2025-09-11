@@ -64,7 +64,7 @@ module "vpc_endpoints" {
       tags                = { Name = "STS-Endpoint" }
     },
 
-   # Endpoint para CloudWatch Logs
+    # Endpoint para CloudWatch Logs
     logs = {
       service             = "logs"
       vpc_endpoint_type   = "Interface"
@@ -74,13 +74,13 @@ module "vpc_endpoints" {
       }
     },
 
-  # Endpoint para ECR (si usamos imágenes privadas)
-  # com.amazonaws.<region>.ecr.api → API de Amazon ECR (descargar imágenes)
+    # Endpoint para ECR (si usamos imágenes privadas)
+    # com.amazonaws.<region>.ecr.api → API de Amazon ECR (descargar imágenes)
     ecr_api = {
       service             = "ecr.api"
       vpc_endpoint_type   = "Interface"
       private_dns_enabled = true
-      DnsHostname = true
+      DnsHostname         = true
       tags                = { Name = "ECR-API-Endpoint" }
     },
 
@@ -92,8 +92,8 @@ module "vpc_endpoints" {
       tags                = { Name = "ECR-DKR-Endpoint" }
     },
 
-  # com.amazonaws.<region>.ssm → API de SSM
-  ssm = {
+    # com.amazonaws.<region>.ssm → API de SSM
+    ssm = {
       service             = "ssm"
       vpc_endpoint_type   = "Interface"
       private_dns_enabled = true
@@ -112,7 +112,7 @@ module "vpc_endpoints" {
       }
     },
 
-  # com.amazonaws.<region>.ec2messages → necesario para enviar/recibir mensajes entre SSM y el agente en la EC2
+    # com.amazonaws.<region>.ec2messages → necesario para enviar/recibir mensajes entre SSM y el agente en la EC2
     ec2messages = {
       service             = "ec2messages"
       vpc_endpoint_type   = "Interface"
