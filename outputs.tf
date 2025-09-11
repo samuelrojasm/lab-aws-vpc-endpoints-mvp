@@ -20,7 +20,6 @@ output "sts_vpce_id" {
   value       = module.vpc_endpoints.endpoints.sts.id
 }
 
-
 output "vpce_ids" {
   description = "IDs de todos los VPC Endpoints"
   value = {
