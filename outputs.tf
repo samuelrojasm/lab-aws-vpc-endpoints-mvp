@@ -18,8 +18,14 @@ output "ssm_vpce_id" {
 output "vpce_ids" {
   description = "IDs de todos los VPC Endpoints"
   value = {
-    s3  = module.vpc_endpoints.endpoints.s3.id
-    ssm = module.vpc_endpoints.endpoints.ssm.id
+    eks         = module.vpc_endpoints.endpoints.eks.id
+    eks_auth    = module.vpc_endpoints.endpoints.eks_auth.id
+    ec2         = module.vpc_endpoints.endpoints.ec2.id
+    ec2messages = module.vpc_endpoints.endpoints.ec2messages.id
+    s3          = module.vpc_endpoints.endpoints.s3.id
+    ssm         = module.vpc_endpoints.endpoints.ssm.id
+    ssmmessages = module.vpc_endpoints.ssmmessages.ssm.id
+    kms         = module.vpc_endpoints.endpoints.kms.id
   }
 }
 
