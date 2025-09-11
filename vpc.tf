@@ -33,6 +33,6 @@ module "vpc" {
   enable_nat_gateway = var.enable_public_access
   single_nat_gateway = var.enable_public_access
 
-  enable_dns_hostnames = false
-  enable_dns_support   = false
+  enable_dns_hostnames = true
+  enable_dns_support   = true
 }
