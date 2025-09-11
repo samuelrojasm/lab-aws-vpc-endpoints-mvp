@@ -35,18 +35,18 @@
 
 ---
 
-## 🚀 Demostración y Prueba del laboratorio (el MVP Funcional)
-- Sección 01
-    ```bash
-    open -a Docker
-    ```
+## 🚀 Demostración y prueba del laboratorio
+### Terraform Apply
+ <p align="center">
+    <img src="imagenes/imagen.png" alt="imagen" width="80%">
+</p>
+### Vista de Endpoints en la consola de AWS
+ <p align="center">
+    <img src="imagenes/imagen.png" alt="imagen" width="80%">
+</p>
 
-    ```hcl
-        resource "aws_iam_role_policy_attachment" "lambda_basic_execution_policy" {
-            role       = aws_iam_role.lambda_role.name
-            policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-        }
-    ```
+### Terraform Destroy
+
 
     ```json
     {"message":"Hola Samuel desde Lambda con HTTP API!"}
