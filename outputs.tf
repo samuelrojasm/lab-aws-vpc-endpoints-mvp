@@ -24,7 +24,7 @@ output "vpce_ids" {
     ec2messages = module.vpc_endpoints.endpoints.ec2messages.id
     s3          = module.vpc_endpoints.endpoints.s3.id
     ssm         = module.vpc_endpoints.endpoints.ssm.id
-    ssmmessages = module.vpc_endpoints.ssmmessages.ssm.id
+    ssmmessages = module.vpc_endpoints.endpoints.ssmmessages.id
     kms         = module.vpc_endpoints.endpoints.kms.id
   }
 }
