@@ -51,7 +51,7 @@ module "vpc_endpoints" {
         Name = "EKS-AUTH-Endpoint"
       }
     },
-
+    
     # Endpoint para EKS STS (para tokens IAM)
     # Habilitar un endpoint privado para STS permite que los nodos de tu VPC obtengan tokens IAM sin salir a Internet, muy útil para clusters EKS privados.
     sts = {
@@ -59,103 +59,6 @@ module "vpc_endpoints" {
       vpc_endpoint_type   = "Interface"
       private_dns_enabled = true
       tags                = { Name = "STS-Endpoint" }
-    },
-
-    # Endpoint para EC2 (necesario si los nodos necesitan metadata/SSM)
-    ec2 = {
-      service             = "ec2"
-      vpc_endpoint_type   = "Interface"
-      private_dns_enabled = true
-      tags = {
-        Name = "EC2-Endpoint"
-      }
-    },
-
-    elasticloadbalancing = {
-      service             = "elasticloadbalancing"
-      vpc_endpoint_type   = "Interface"
-      private_dns_enabled = true
-      tags = {
-        Name = "ELB-Endpoint"
-      }
-    },
-
-    ssm = {
-      service             = "ssm"
-      vpc_endpoint_type   = "Interface"
-      private_dns_enabled = true
-      tags = {
-        Name = "SSM-Endpoint"
-      }
-    },
-
-    ssmmessages = {
-      service             = "ssmmessages"
-      vpc_endpoint_type   = "Interface"
-      private_dns_enabled = true
-      tags = {
-        Name = "SSM-Messages-Endpoint"
-      }
-    },
-
-    ec2messages = {
-      service             = "ec2messages"
-      vpc_endpoint_type   = "Interface"
-      private_dns_enabled = true
-      tags = {
-        Name = "EC2-Messages-Endpoint"
-      }
-    },
-
-    # Endpoint para CloudWatch Logs
-    logs = {
-      service             = "logs"
-      vpc_endpoint_type   = "Interface"
-      private_dns_enabled = true
-      tags = {
-        Name = "CloudWatch-Logs-Endpoint"
-      }
-    },
-
-    cloudwatch = {
-      service             = "monitoring"
-      vpc_endpoint_type   = "Interface"
-      private_dns_enabled = true
-      tags = {
-        Name = "CloudWatch-Metrics-Endpoint"
-      }
-    },
-
-    kms = {
-      service             = "kms"
-      vpc_endpoint_type   = "Interface"
-      private_dns_enabled = true
-      tags = {
-        Name = "KMS-Endpoint"
-      }
-    },
-
-    # Endpoint para ECR (si usamos imágenes privadas)
-    ecr_api = {
-      service             = "ecr.api"
-      vpc_endpoint_type   = "Interface"
-      private_dns_enabled = true
-      tags                = { Name = "ECR-API-Endpoint" }
-    },
-
-    ecr_dkr = {
-      service             = "ecr.dkr"
-      vpc_endpoint_type   = "Interface"
-      private_dns_enabled = true
-      tags                = { Name = "ECR-DKR-Endpoint" }
-    },
-
-    # Gateway endpoints
-    # Endpoint para S3 (Gateway endpoint)
-    s3 = {
-      service           = "s3"
-      vpc_endpoint_type = "Gateway"
-      tags              = { Name = "S3-Endpoint" }
     }
   }
 }
