@@ -1,20 +1,11 @@
 # 🧪 Lab Personal: MVP de creación de VPC Endpoints
 
 [![AWS](https://img.shields.io/badge/AWS-%23FF9900?logo=amazonaws&logoColor=white)](#)
-[![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?logo=amazon-web-services&logoColor=white)](#)
-
 [![Terraform](https://img.shields.io/badge/IaC-Terraform-623CE4?logo=terraform&logoColor=white)](#)
 [![HCL](https://img.shields.io/badge/Language-HCL-blueviolet)](#)
-
-[![Python](https://img.shields.io/badge/Language-Python-3776AB?logo=python&logoColor=white)](#)
-
-[![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](#)
-
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
-
 > Este repositorio contiene un **laboratorio mínimo funcional (MVP)** para crear VPC Endpoints en AWS utilizando Terraform. Es un ejemplo básico para comenzar con el acceso privado a servicios de AWS desde una VPC.  
-
 
 ## 🎯 Objetivos del MPV
 - Proveer una configuración mínima y funcional con Terraform para desplegar VPC Endpoints en AWS, sirviendo como punto de partida para aprender, validar conectividad privada y construir laboratorios más avanzados de red y seguridad.
