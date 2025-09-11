@@ -1,27 +1,6 @@
 # main.terraform {
 
 # --------------------------------------------------------------------------------------
-# Creacion de VPC Endpoints de EKS
-#   - Crea VPC Endpoints de tipo Interface en AWS dentro de la VPC
-#   - Para clústeres EKS privados 100% funcionales, sin necesidad de NAT Gateway
-#   - Los endpoints de tipo Interface crean ENIs dentro de subredes
-# --------------------------------------------------------------------------------------
-
-
-resource "aws_vpc_endpoint" "eks" {
-  # Crea un endpoint privado para la API del cluster de EKS dentro de las subredes privadas de la VPC
-  vpc_id              = module.vpc.vpc_id
-  service_name        = "eks"
-  vpc_endpoint_type   = "Interface"
-  subnet_ids          = module.vpc.private_subnets
-  security_group_ids  = [aws_security_group.vpc_endpoints_sg.id]
-  private_dns_enabled = true
-  tags = {
-    Name = "EKS-API-Endpoint"
-  }
-}
-
-# --------------------------------------------------------------------------------------
 # Módulo VPC para crear los endpoints
 #   - Crea VPC Endpoints de tipo Interface en AWS dentro de la VPC
 #   - Para clústeres EKS privados 100% funcionales, sin necesidad de NAT Gateway
@@ -53,6 +32,17 @@ module "vpc_endpoints" {
 
   endpoints = {
 
+    # Crea un endpoint privado para la API del cluster de EKS dentro de las subredes privadas de la VPC
+    eks = {
+      service             = "eks"
+      vpc_endpoint_type   = "Interface"
+      private_dns_enabled = true
+      tags = {
+        Name = "EKS-API-Endpoint"
+      }
+    },
+
+    # Endpoint Privado para la autenticación del cluster EKS
     eks_auth = {
       service             = "eks-auth"
       vpc_endpoint_type   = "Interface"
@@ -61,7 +51,6 @@ module "vpc_endpoints" {
         Name = "EKS-AUTH-Endpoint"
       }
     },
-
 
     # Endpoint para EKS STS (para tokens IAM)
     # Habilitar un endpoint privado para STS permite que los nodos de tu VPC obtengan tokens IAM sin salir a Internet, muy útil para clusters EKS privados.
