@@ -7,13 +7,19 @@ output "vpce_sg_id" {
 
 output "eks_vpce_id" {
   description = "VPC Endpoint ID para eks"
-  value       = module.vpc_endpoints.endpoints.s3.id
+  value       = module.vpc_endpoints.endpoints.eks.id
 }
 
 output "eks_auth_vpce_id" {
   description = "VPC Endpoint ID para eks-auth"
-  value       = module.vpc_endpoints.endpoints.ssm.id
+  value       = module.vpc_endpoints.endpoints.eks_auth.id
 }
+
+output "sts_vpce_id" {
+  description = "VPC Endpoint ID para sts"
+  value       = module.vpc_endpoints.endpoints.sts.id
+}
+
 
 output "vpce_ids" {
   description = "IDs de todos los VPC Endpoints"
