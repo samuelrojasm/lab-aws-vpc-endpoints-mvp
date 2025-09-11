@@ -29,7 +29,7 @@
 ## 🚀 Demostración y prueba del laboratorio
 ### Terraform Apply
  <p align="center">
-    <img src="assets/tf-apply.png" alt="tf-apply" width="80%">
+    <img src="assets/tf-apply.png" alt="tf-apply" width="90%">
 </p>
 
 ### Terraform state list
@@ -39,17 +39,17 @@
 
 ### Vista de Endpoints en la consola de AWS
 <p align="center">
-    <img src="assets/aws-console.png" alt="aws-console" width="80%">
+    <img src="assets/aws-console.png" alt="aws-console" width="90%">
 </p>
 
 ### VPC Resource Map
 <p align="center">
-    <img src="assets/vpc-resource-map.png" alt="vpc-resource-map" width="80%">
+    <img src="assets/vpc-resource-map.png" alt="vpc-resource-map" width="90%">
 </p>
 
 ### Terraform Destroy
 <p align="center">
-    <img src="assets/tf-destroy.png" alt="tf-destroy" width="80%">
+    <img src="assets/tf-destroy.png" alt="tf-destroy" width="70%">
 </p>
 
 ---
